@@ -68,3 +68,7 @@ logs
 
 # Optional eslint cache
 .eslintcache
+
+# Project specific files to ignore
+Arquitecture.md
+.Cursor/
