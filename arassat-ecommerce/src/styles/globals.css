@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-black: #000000;
+    --charcoal-dark: #1a1a1a;
+    --accent-orange: #FF6B35;
+    --hover-orange: #ff7d4d;
+    --text-white: #ffffff;
+    --text-gray: #b0b0b0;
+    --text-light-gray: #e0e0e0;
+    --card-bg: #2a2a2a;
+    --border-color: #333333;
+  }
+
+  body {
+    @apply bg-primary-black text-text-white;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply inline-block px-6 py-3 rounded-md font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-accent-orange text-text-white hover:bg-hover-orange;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-text-white border border-text-white hover:bg-text-white hover:text-primary-black;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-accent-orange border border-accent-orange hover:bg-accent-orange hover:text-text-white;
+  }
+
+  /* Container */
+  .container {
+    @apply mx-auto px-4;
+  }
+} 
