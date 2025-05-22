@@ -5,44 +5,44 @@ import HorseVisualization from '@/components/catalog/HorseVisualization';
 import Navbar from '@/components/layout/Navbar';
 import { HotspotData, ProductThumbnail } from '@/types/catalog';
 
-// Mock data for hotspots - exact positions from STYLE HTML
+// Mock data for hotspots - positioned based on horse anatomy
 const mockHotspots: HotspotData[] = [
   { 
     id: 'hs1', 
-    top: '20%', 
-    left: '48%', 
+    top: '9%', 
+    left: '85%', 
     ariaLabel: 'Show products for bridle and head', 
     categoryName: 'Bridle / Head', 
     categoryId: 'cat_cabezadas' 
   },
   { 
     id: 'hs2', 
-    top: '38%', 
-    left: '35%', 
+    top: '35%', 
+    left: '45%', 
     ariaLabel: 'Show products for saddle', 
     categoryName: 'Saddle', 
     categoryId: 'cat_monturas' 
   },
   { 
     id: 'hs3', 
-    top: '55%', 
-    left: '32%', 
+    top: '65%', 
+    left: '42%', 
     ariaLabel: 'Show products for stirrups', 
     categoryName: 'Stirrups', 
     categoryId: 'cat_estribos' 
   },
   { 
     id: 'hs4', 
-    top: '50%', 
-    left: '58%', 
+    top: '55%', 
+    left: '55%', 
     ariaLabel: 'Show products for blankets and cooling sheets', 
     categoryName: 'Barrel', 
     categoryId: 'cat_mantas' 
   },
   { 
     id: 'hs5', 
-    top: '75%', 
-    left: '30%', 
+    top: '85%', 
+    left: '35%', 
     ariaLabel: 'Show products for leg protection', 
     categoryName: 'Leg / Fetlock', 
     categoryId: 'cat_protectores' 
