@@ -13,7 +13,7 @@ export default function Footer({ companyName, year = new Date().getFullYear() }:
               {companyName || SITE_NAME}
             </h3>
             <p className="text-text-gray mb-4">
-              Premium equestrian equipment for horses and riders. Quality products for all your needs.
+              Aperos Premium para caballos y jinetes. Productos de alta calidad para todas tus necesidades.
             </p>
             <div className="flex space-x-4">
               {SOCIAL_LINKS.map((link) => (
@@ -47,21 +47,21 @@ export default function Footer({ companyName, year = new Date().getFullYear() }:
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-text-light-gray font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="text-text-light-gray font-semibold text-lg mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/products" className="text-text-gray hover:text-accent-orange transition-colors duration-300">
-                  All Products
+                  Todos los Productos
                 </Link>
               </li>
               <li>
                 <Link href="/categories" className="text-text-gray hover:text-accent-orange transition-colors duration-300">
-                  Categories
+                  Categorías
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-text-gray hover:text-accent-orange transition-colors duration-300">
-                  About Us
+                  Sobre Nosotros
                 </Link>
               </li>
               <li>
@@ -89,7 +89,7 @@ export default function Footer({ companyName, year = new Date().getFullYear() }:
 
         {/* Copyright */}
         <div className="border-t border-border-color mt-8 pt-6 text-center text-text-gray text-sm">
-          <p>© {year} {companyName || SITE_NAME}. All rights reserved.</p>
+          <p>© {year} {companyName || SITE_NAME}. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
