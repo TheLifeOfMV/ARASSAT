@@ -11,23 +11,23 @@ import { CartItem } from '@/types/cart';
 // Sample data
 const sampleProduct: Product = {
   id: '1',
-  name: 'Premium Horse Boots',
-  description: 'Professional protection boots for training and competition. Made with premium materials for maximum comfort and durability.',
+  name: 'Aperos Premium',
+  description: 'Aperos Premium para caballos y jinetes. Made with premium materials for maximum comfort and durability.',
   price: 54.99,
   imageUrl: 'https://images.unsplash.com/photo-1566751059906-44fd15fa5b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  category: 'Protection',
+  category: 'Protección',
   stock: 15,
   rating: 4.8,
   reviews: 24,
   isNew: true,
   isFeatured: true,
-  slug: 'premium-horse-boots',
+  slug: 'premium-horse-boot s',
   features: [
-    'Premium neoprene material',
-    'Shock-absorbing padding',
-    'Adjustable velcro straps',
-    'Breathable design',
-    'Water-resistant'
+    'Material Premium',
+    'Padding Premium',
+    'Cinturones ajustables',
+    'Diseño respirable',
+    'Resistente al agua'
   ],
   variants: [
     {
@@ -97,34 +97,34 @@ const sampleProducts: Product[] = [
   {
     ...sampleProduct,
     id: '2',
-    name: 'Fetlock Protection',
-    description: 'Advanced fetlock support system for horses.',
+    name: 'Soporte para Fetlock',
+    description: 'Sistema de soporte avanzado para fetlock de caballos.',
     price: 42.99,
     imageUrl: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     isNew: false,
-    slug: 'fetlock-protection',
+    slug: 'soporte-para-fetlock',
     stock: 8
   },
   {
     ...sampleProduct,
     id: '3',
-    name: 'Professional Gear',
-    description: 'Complete riding equipment set for professionals.',
+    name: 'Equipo de Aperos Profesionales',
+    description: 'Equipo completo de aperos para profesionales.',
     price: 129.99,
     imageUrl: 'https://images.unsplash.com/photo-1508343919546-4a5792fee935?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     isNew: true,
-    slug: 'professional-gear',
+    slug: 'equipo-de-aperos-profesionales',
     stock: 3
   },
   {
     ...sampleProduct,
     id: '4',
-    name: 'Riding Helmet',
-    description: 'Safety first with our premium riding helmet.',
+    name: 'Cascos de Jinete',
+    description: 'Seguridad primero con nuestro casco de jinete premium.',
     price: 89.99,
     imageUrl: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     isNew: false,
-    slug: 'riding-helmet',
+    slug: 'cascos-de-jinete',
     stock: 12
   }
 ];
