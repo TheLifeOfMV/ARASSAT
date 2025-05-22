@@ -17,4 +17,7 @@ export interface CartItem {
   productId: string;
   quantity: number;
   product: Product;
-} 
+}
+
+export * from './product';
+export * from './cart'; 
