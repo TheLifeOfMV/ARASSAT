@@ -179,7 +179,7 @@ const ProductsPage: React.FC = () => {
       <main className="main-content">
         <div className="left-canvas">
           <HorseVisualization
-            horseImageUrl="/horse.png"
+            horseImageUrl="/Horse Product.png"
             hotspotsData={mockHotspots}
             onHotspotActivated={handleHotspotActivated}
           />

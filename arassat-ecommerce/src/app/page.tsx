@@ -95,7 +95,7 @@ export default function Home() {
   };
 
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/573001234567', '_blank');
+    window.open('https://wa.me/573205842664', '_blank');
   };
 
   return (
@@ -107,7 +107,7 @@ export default function Home() {
             Bienvenidos a <span className="text-accent-orange">ARASSAT</span>
           </h1>
           <p className="text-text-light-gray text-base md:text-base mb-6 max-w-xl mx-auto lg:mx-0">
-            Aperos Premium para caballos. Descubre nuestra colección de productos de alta calidad.
+          Los caballos son nuestra pasión. Los aperos, nuestra forma de honrarlos con elegancia, tradición y excelencia. Descubre nuestra colección de productos de alta calidad
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 mb-6">
             <button className="bg-accent-orange hover:bg-hover-orange text-text-white px-5 py-2.5 rounded-md transition-colors duration-300 text-sm">
@@ -120,7 +120,7 @@ export default function Home() {
           
           {/* Social Media Buttons */}
           <div className="flex justify-center lg:justify-start space-x-4">
-            <p className="text-text-light-gray text-sm mr-2 self-center">Síguenos:</p>
+            <p className="text-text-light-gray text-sm mr-2 self-center">Contactanos:</p>
             <button 
               onClick={handleInstagramClick}
               className="group text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-125"

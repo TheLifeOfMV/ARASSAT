@@ -13,7 +13,7 @@ export default function Footer({ companyName, year = new Date().getFullYear() }:
               {companyName || SITE_NAME}
             </h3>
             <p className="text-text-gray mb-4">
-              Aperos Premium para caballos y jinetes. Productos de alta calidad para todas tus necesidades.
+              Los aperos diferentes
             </p>
             <div className="flex space-x-4">
               {SOCIAL_LINKS.map((link) => (
@@ -61,12 +61,12 @@ export default function Footer({ companyName, year = new Date().getFullYear() }:
               </li>
               <li>
                 <Link href="/about" className="text-text-gray hover:text-accent-orange transition-colors duration-300">
-                  Sobre Nosotros
+                  Quienes somos
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-text-gray hover:text-accent-orange transition-colors duration-300">
-                  Contact
+                  Contacto
                 </Link>
               </li>
             </ul>
