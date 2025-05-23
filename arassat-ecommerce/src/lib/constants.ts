@@ -4,11 +4,11 @@ export const SITE_NAME = 'ARASSAT';
 export const SITE_DESCRIPTION = 'Premium Equestrian E-commerce';
 
 export const NAV_LINKS: NavLink[] = [
-  { name: 'Home', href: '/' },
-  { name: 'Products', href: '/products' },
-  { name: 'Categories', href: '/categories' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Inicio', href: '/' },
+  { name: 'Productos', href: '/products' },
+  { name: 'Categorías', href: '/categories' },
+  { name: 'Quienes Somos', href: '/about' },
+  { name: 'Contacto', href: '/contact' },
 ];
 
 export const SOCIAL_LINKS: NavLink[] = [

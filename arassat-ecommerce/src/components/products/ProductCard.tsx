@@ -73,9 +73,9 @@ const ProductCard = ({ product, onAddToCart, isLoading = false }: ProductCardPro
           <button
             onClick={() => onAddToCart && onAddToCart(product)}
             className="bg-accent-orange hover:bg-hover-orange text-text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-            aria-label={`Add ${product.name} to cart`}
+            aria-label={`Añadir ${product.name} al carrito`}
           >
-            Add to Cart
+            Añadir al Carrito
           </button>
         </div>
       </div>
