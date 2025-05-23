@@ -12,10 +12,10 @@ export default function Home() {
         </p>
         <div className="flex justify-center space-x-4">
           <button className="bg-accent-orange hover:bg-hover-orange text-text-white px-6 py-3 rounded-md transition-colors duration-300">
-            Shop Now
+            Comprar Ahora
           </button>
           <button className="border border-text-white text-text-white hover:bg-text-white hover:text-primary-black px-6 py-3 rounded-md transition-colors duration-300">
-            Learn More
+            Más Información
           </button>
         </div>
       </div>
