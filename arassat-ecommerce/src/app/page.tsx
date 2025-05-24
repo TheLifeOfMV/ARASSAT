@@ -1,10 +1,11 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Layout } from '@/components/layout';
 import ProductCard from '@/components/products/ProductCard';
 import { Product } from '@/types/product';
 
-// Sample products data - reduced to 3 products
+// Expanded products data - 8 products for carousel (2 sets of 4)
 const featuredProducts: Product[] = [
   {
     id: '1',
@@ -56,6 +57,91 @@ const featuredProducts: Product[] = [
     features: ['Diseño tradicional', 'Calidad garantizada', 'Durabilidad extrema'],
     variants: [],
     images: ['/api/placeholder/300/300']
+  },
+  {
+    id: '4',
+    name: 'Freno Vaquero Elite',
+    description: 'Freno profesional para competencias de alto nivel',
+    price: 850000.00,
+    imageUrl: '/api/placeholder/300/300',
+    category: 'Frenos',
+    stock: 6,
+    rating: 4.6,
+    reviews: 14,
+    isNew: false,
+    isFeatured: true,
+    slug: 'freno-vaquero-elite',
+    features: ['Acero inoxidable', 'Diseño ergonómico', 'Control preciso'],
+    variants: [],
+    images: ['/api/placeholder/300/300']
+  },
+  {
+    id: '5',
+    name: 'Espuelas Artesanales',
+    description: 'Espuelas hechas a mano con detalles únicos',
+    price: 450000.00,
+    imageUrl: '/api/placeholder/300/300',
+    category: 'Espuelas',
+    stock: 10,
+    rating: 4.8,
+    reviews: 22,
+    isNew: true,
+    isFeatured: true,
+    slug: 'espuelas-artesanales',
+    features: ['Trabajo artesanal', 'Metales nobles', 'Diseño exclusivo'],
+    variants: [],
+    images: ['/api/placeholder/300/300']
+  },
+  {
+    id: '6',
+    name: 'Cabezada Completa Premium',
+    description: 'Sistema completo de cabezada con herrajes de lujo',
+    price: 1200000.00,
+    imageUrl: '/api/placeholder/300/300',
+    category: 'Cabezadas',
+    stock: 4,
+    rating: 4.9,
+    reviews: 8,
+    isNew: false,
+    isFeatured: true,
+    slug: 'cabezada-completa-premium',
+    features: ['Cuero italiano', 'Herrajes dorados', 'Ajuste perfecto'],
+    variants: [],
+    images: ['/api/placeholder/300/300']
+  },
+  {
+    id: '7',
+    name: 'Riendas Trenzadas Pro',
+    description: 'Riendas profesionales trenzadas a mano',
+    price: 320000.00,
+    imageUrl: '/api/placeholder/300/300',
+    category: 'Riendas',
+    stock: 15,
+    rating: 4.7,
+    reviews: 31,
+    isNew: true,
+    isFeatured: true,
+    slug: 'riendas-trenzadas-pro',
+    features: ['Trenzado manual', 'Cuero resistente', 'Grip superior'],
+    variants: [],
+    images: ['/api/placeholder/300/300']
+  },
+  {
+    id: '8',
+    name: 'Estribos Plateados Deluxe',
+    description: 'Estribos de lujo con acabado plateado y diseño ergonómico',
+    price: 680000.00,
+    imageUrl: '/api/placeholder/300/300',
+    category: 'Estribos',
+    stock: 7,
+    rating: 4.5,
+    reviews: 16,
+    isNew: false,
+    isFeatured: true,
+    slug: 'estribos-plateados-deluxe',
+    features: ['Acabado plateado', 'Diseño ergonómico', 'Máxima seguridad'],
+    variants: [],
+    images: ['/api/placeholder/300/300']
   }
 ];
 
@@ -85,6 +171,63 @@ const WhatsAppIcon = ({ size = 20, className = "" }: { size?: number; className?
 );
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      const newIsMobile = window.innerWidth < 768;
+      setIsMobile(newIsMobile);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const productsPerSlide = isMobile ? 1 : 4;
+  const totalSlides = Math.ceil(featuredProducts.length / productsPerSlide);
+
+  // Reset currentSlide if it's out of bounds when switching modes
+  useEffect(() => {
+    if (currentSlide >= totalSlides) {
+      setCurrentSlide(0);
+    }
+  }, [totalSlides, currentSlide]);
+
+  // Touch event handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
+  const getCurrentProducts = () => {
+    const startIndex = currentSlide * productsPerSlide;
+    return featuredProducts.slice(startIndex, startIndex + productsPerSlide);
+  };
+
   const handleAddToCart = (product: Product) => {
     // Placeholder function - implement cart logic
     console.log('Added to cart:', product.name);
@@ -96,6 +239,14 @@ export default function Home() {
 
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/573205842664', '_blank');
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   return (
@@ -151,20 +302,82 @@ export default function Home() {
       {/* Spacer to push orange stripe lower */}
       <div className="flex-1 min-h-[40px] lg:min-h-[60px]"></div>
       
-      {/* Orange stripe section with 3 products - reduced size */}
+      {/* Orange stripe section with carousel */}
       <div className="w-full bg-[#D35424] py-6 px-4 lg:px-8">
         <div className="container mx-auto">
-          <h2 className="text-xl lg:text-2xl font-bold text-text-white text-center mb-4">
-            Productos Destacados
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {featuredProducts.map((product) => (
-              <div key={product.id} className="transform hover:scale-[0.92] transition-transform duration-300 scale-90">
-                <ProductCard 
-                  product={product}
-                  onAddToCart={handleAddToCart}
-                />
-              </div>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-white text-center flex-1">
+              Productos Destacados
+            </h2>
+            
+            {/* Carousel controls */}
+            <div className="flex space-x-2">
+              <button
+                onClick={prevSlide}
+                className="bg-text-white/20 hover:bg-text-white/30 text-text-white p-2 rounded-full transition-colors duration-300 touch-manipulation"
+                aria-label="Anterior"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+              </button>
+              <button
+                onClick={nextSlide}
+                className="bg-text-white/20 hover:bg-text-white/30 text-text-white p-2 rounded-full transition-colors duration-300 touch-manipulation"
+                aria-label="Siguiente"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          {/* Carousel container */}
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                <div key={slideIndex} className="w-full flex-shrink-0">
+                  <div className={`grid gap-4 mx-auto ${
+                    isMobile 
+                      ? 'grid-cols-1 max-w-sm px-4' 
+                      : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4 max-w-7xl'
+                  }`}>
+                    {featuredProducts
+                      .slice(slideIndex * productsPerSlide, (slideIndex + 1) * productsPerSlide)
+                      .map((product) => (
+                        <div key={product.id} className={`transform hover:scale-[0.92] transition-transform duration-300 ${
+                          isMobile ? 'scale-100' : 'scale-90'
+                        }`}>
+                          <ProductCard 
+                            product={product}
+                            onAddToCart={handleAddToCart}
+                          />
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Slide indicators */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-colors duration-300 touch-manipulation ${
+                  currentSlide === index ? 'bg-text-white' : 'bg-text-white/40'
+                }`}
+                aria-label={`Ir a diapositiva ${index + 1}`}
+              />
             ))}
           </div>
         </div>
