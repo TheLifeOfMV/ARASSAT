@@ -10,15 +10,15 @@ const mockHotspots: HotspotData[] = [
   { 
     id: 'hs1', 
     top: '9%', 
-    left: '85%', 
+    left: '78%', 
     ariaLabel: 'Mostrar productos para cabezadas y riendas', 
-    categoryName: 'Cabezadas / Riendas', 
+    categoryName: 'Aperos', 
     categoryId: 'cat_cabezadas' 
   },
   { 
     id: 'hs2', 
-    top: '35%', 
-    left: '45%', 
+    top: '20%', 
+    left: '48%', 
     ariaLabel: 'Mostrar productos para monturas', 
     categoryName: 'Monturas', 
     categoryId: 'cat_monturas' 
@@ -33,10 +33,10 @@ const mockHotspots: HotspotData[] = [
   },
   { 
     id: 'hs4', 
-    top: '55%', 
-    left: '55%', 
+    top: '27%', 
+    left: '34%', 
     ariaLabel: 'Mostrar productos para mantas y sudaderos', 
-    categoryName: 'Mantas / Sudaderos', 
+    categoryName: 'Mantas', 
     categoryId: 'cat_mantas' 
   },
   { 
