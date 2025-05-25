@@ -413,39 +413,55 @@
   .main-content {
     flex-direction: column;
     height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
   }
   .left-canvas {
     flex-basis: auto;
-    height: 64vh;
-    max-width: 100%;
-    padding-top: calc(100% / 16 * 9);
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    max-width: 100vw;
+    padding-top: 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   .horse-image {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
+    display: block;
   }
   .right-drawer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 64vh;
+    position: static;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    height: auto;
+    min-height: 0;
+    max-height: none;
     flex-basis: auto;
-    transform: translateY(100%);
-    border-top-left-radius: var(--radius-lg);
-    border-top-right-radius: var(--radius-lg);
+    transform: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     padding: var(--spacing-md);
     background-color: var(--drawer-background-translucent);
-    border-top: 1px solid var(--divider-color);
-    overflow-y: hidden;
+    border-top: none;
+    overflow-y: visible;
+    z-index: 1;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
   }
   .right-drawer.open {
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
   }
   .product-category-grid {
@@ -453,10 +469,30 @@
     gap: var(--spacing-sm);
   }
   .product-thumbnail {
-    height: 160px;
+    height: 180px;
   }
   .product-thumbnail img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
+  .hotspot-marker {
+    min-width: 24px;
+    min-height: 24px;
+    width: 18px;
+    height: 18px;
+  }
+  .hotspot-marker:hover {
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 0 0 2px rgba(255, 110, 26, 0.25);
+  }
+  .hotspot-marker.animated {
+    animation: hotspot-pulse-mobile 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes hotspot-pulse-mobile {
+  0% { box-shadow: var(--accent-orange) 0 0 0 0; }
+  70% { box-shadow: var(--accent-orange) 0 0 0 5px; opacity: 0; }
+  100% { box-shadow: var(--accent-orange) 0 0 0 0; }
 } 
