@@ -4,6 +4,7 @@ export interface LayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  customBackground?: boolean;
 }
 
 export interface NavbarProps {

@@ -250,57 +250,60 @@ export default function Home() {
   };
 
   return (
-    <Layout title="Home" description="Bienvenidos a ARASSAT - Tienda de aperos Premium">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-8 lg:py-12 px-4 lg:px-8">
-        {/* Content - First on mobile, right on desktop */}
-        <div className="w-full lg:flex-1 lg:pl-12 text-center lg:text-left order-1 lg:order-2">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-text-white mb-4">
-            Bienvenidos a <span className="text-accent-orange">ARASSAT</span>
-          </h1>
-          <p className="text-text-light-gray text-base md:text-base mb-6 max-w-xl mx-auto lg:mx-0">
-          Los caballos son nuestra pasión. Los aperos, nuestra forma de honrarlos con elegancia, tradición y excelencia. Descubre nuestra colección de productos de alta calidad
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 mb-6">
-            <button className="bg-accent-orange hover:bg-hover-orange text-text-white px-5 py-2.5 rounded-md transition-colors duration-300 text-sm">
-              Comprar Ahora
-            </button>
-            <button className="border border-text-white text-text-white hover:bg-text-white hover:text-primary-black px-5 py-2.5 rounded-md transition-colors duration-300 text-sm">
-              Más Información
-            </button>
-          </div>
-          
-          {/* Social Media Buttons */}
-          <div className="flex justify-center lg:justify-start space-x-4">
-            <p className="text-text-light-gray text-sm mr-2 self-center">Contactanos:</p>
-            <button 
-              onClick={handleInstagramClick}
-              className="group text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-125"
-              aria-label="Seguir en Instagram"
-            >
-              <InstagramIcon size={24} className="group-hover:scale-110 transition-transform duration-200 drop-shadow-lg" />
-            </button>
-            <button 
-              onClick={handleWhatsAppClick}
-              className="group text-white hover:text-green-400 transition-all duration-300 transform hover:scale-125"
-              aria-label="Contactar por WhatsApp"
-            >
-              <WhatsAppIcon size={24} className="group-hover:scale-110 transition-transform duration-200 drop-shadow-lg" />
-            </button>
-          </div>
-        </div>
+    <Layout title="Home" description="Bienvenidos a ARASSAT - Tienda de aperos Premium" customBackground={true}>
+      {/* Hero Section with Background Image */}
+      <div 
+        className="relative w-full bg-no-repeat bg-center flex flex-col justify-center"
+        style={{
+          backgroundImage: `url('/Arassat homepage.png')`,
+          backgroundSize: 'cover',
+          height: '100vh',
+          minHeight: '600px',
+        }}
+      >
+        {/* Opacity Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         
-        {/* Horse image - Second on mobile, left on desktop */}
-        <div className="w-full lg:flex-1 lg:max-w-lg mt-6 lg:mt-0 order-2 lg:order-1">
-          <img 
-            src="/Horse homepage.png" 
-            alt="Caballo con aperos ARASSAT" 
-            className="w-full max-w-md lg:max-w-full h-auto object-contain mx-auto"
-          />
+        {/* Content Container */}
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between py-8 lg:py-12 px-4 lg:px-8">
+          {/* Text Content */}
+          <div className="w-full lg:flex-1 lg:pl-12 text-center lg:text-left order-1 lg:order-2">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              Bienvenidos a <span className="text-accent-orange">ARASSAT</span>
+            </h1>
+            <p className="text-white text-base md:text-lg mb-6 max-w-xl mx-auto lg:mx-0 drop-shadow-md">
+              Los caballos son nuestra pasión. Los aperos, nuestra forma de honrarlos con elegancia, tradición y excelencia. Descubre nuestra colección de productos de alta calidad
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 mb-6">
+              <button className="bg-accent-orange hover:bg-hover-orange text-white px-6 py-3 rounded-md transition-colors duration-300 text-base font-semibold shadow-lg">
+                Comprar Ahora
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-md transition-colors duration-300 text-base font-semibold backdrop-blur-sm bg-white/10">
+                Más Información
+              </button>
+            </div>
+            
+            {/* Social Media Buttons */}
+            <div className="flex justify-center lg:justify-start space-x-4">
+              <p className="text-white text-sm mr-2 self-center drop-shadow-md">Contactanos:</p>
+              <button 
+                onClick={handleInstagramClick}
+                className="group text-white hover:text-pink-400 transition-all duration-300 transform hover:scale-125"
+                aria-label="Seguir en Instagram"
+              >
+                <InstagramIcon size={28} className="group-hover:scale-110 transition-transform duration-200 drop-shadow-lg" />
+              </button>
+              <button 
+                onClick={handleWhatsAppClick}
+                className="group text-white hover:text-green-400 transition-all duration-300 transform hover:scale-125"
+                aria-label="Contactar por WhatsApp"
+              >
+                <WhatsAppIcon size={28} className="group-hover:scale-110 transition-transform duration-200 drop-shadow-lg" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      
-      {/* Spacer to push orange stripe lower */}
-      <div className="flex-1 min-h-[40px] lg:min-h-[60px]"></div>
       
       {/* Orange stripe section with carousel */}
       <div className="w-full bg-[#D35424] py-6 px-4 lg:px-8">
