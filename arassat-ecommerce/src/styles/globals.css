@@ -4,26 +4,181 @@
 @import "./catalog.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Equestrian Color System */
+  --primary-black: #000000;
+  --charcoal-dark: #1a1a1a;
+  --accent-orange: #FF6B35;
+  --hover-orange: #ff7d4d;
+  --text-white: #ffffff;
+  --text-gray: #b0b0b0;
+  --text-light-gray: #e0e0e0;
+  --card-bg: #2a2a2a;
+  --border-color: #333333;
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
+  --info: #17a2b8;
+  
+  /* Typography */
+  --font-family: 'Arial', 'Helvetica', sans-serif;
+  --line-height-base: 1.6;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 25px rgba(255, 107, 53, 0.15);
+  --shadow-orange: 0 0 0 3px rgba(255, 107, 53, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Base Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-family: var(--font-family);
+  background-color: var(--primary-black);
+  color: var(--text-white);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus Management for Accessibility */
+*:focus {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 2px;
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #666666;
+    --text-gray: #cccccc;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Typography Scale */
+.heading-xl { 
+  font-size: clamp(2.5rem, 5vw, 3.5rem); 
+  font-weight: var(--font-weight-bold); 
+  line-height: 1.2; 
+}
+
+.heading-lg { 
+  font-size: clamp(2rem, 4vw, 2.5rem); 
+  font-weight: var(--font-weight-bold); 
+  line-height: 1.3; 
+}
+
+.heading-md { 
+  font-size: clamp(1.5rem, 3vw, 2rem); 
+  font-weight: var(--font-weight-semibold); 
+  line-height: 1.4; 
+}
+
+.heading-sm { 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); 
+  font-weight: var(--font-weight-semibold); 
+  line-height: 1.4; 
+}
+
+.body-lg { 
+  font-size: 1.125rem; 
+  font-weight: var(--font-weight-normal); 
+  line-height: 1.6; 
+}
+
+.body-md { 
+  font-size: 1rem; 
+  font-weight: var(--font-weight-normal); 
+  line-height: 1.6; 
+}
+
+.body-sm { 
+  font-size: 0.875rem; 
+  font-weight: var(--font-weight-normal); 
+  line-height: 1.5; 
+}
+
+.caption { 
+  font-size: 0.75rem; 
+  font-weight: var(--font-weight-normal); 
+  line-height: 1.4; 
+  color: var(--text-gray); 
+}
+
+/* Performance optimizations */
+.card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Button hover effects */
+.btn:hover {
+  transform: translateY(-2px) translateZ(0);
+  will-change: transform;
+}
+
+/* Ensure interactive elements are large enough for touch */
+.btn,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
 } 

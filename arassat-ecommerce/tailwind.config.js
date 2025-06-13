@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         'primary-black': '#000000',
         'charcoal-dark': '#1a1a1a',
-        'accent-orange': '#D35424',
+        'accent-orange': '#FF6B35',
         'hover-orange': '#ff7d4d',
         'text-white': '#ffffff',
         'text-gray': '#b0b0b0',
@@ -21,6 +21,22 @@ module.exports = {
         'warning': '#ffc107',
         'error': '#dc3545',
         'info': '#17a2b8',
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.8s ease-in-out',
+        'pulse': 'pulse 2s infinite',
+        'spin': 'spin 1s linear infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulse: {
+          '0%': { boxShadow: '0 0 0 0 rgba(255, 107, 53, 0.7)' },
+          '70%': { boxShadow: '0 0 0 10px rgba(255, 107, 53, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(255, 107, 53, 0)' },
+        },
       },
       fontFamily: {
         sans: ['Arial', 'Helvetica', 'sans-serif'],

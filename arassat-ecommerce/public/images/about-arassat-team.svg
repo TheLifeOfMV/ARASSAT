@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff7d4d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="120" cy="120" r="60" fill="#FF6B35" opacity="0.1"/>
+  <circle cx="680" cy="480" r="80" fill="#FF6B35" opacity="0.15"/>
+  
+  <!-- Main horse silhouette -->
+  <g transform="translate(300, 150)" fill="url(#orangeGradient)" opacity="0.8">
+    <path d="M0,200 Q20,180 40,200 Q60,220 80,200 Q100,180 120,200 Q140,220 160,200 Q180,180 200,200 L200,250 Q180,270 160,250 Q140,230 120,250 Q100,270 80,250 Q60,230 40,250 Q20,270 0,250 Z"/>
+    <!-- Horse head outline -->
+    <ellipse cx="100" cy="80" rx="50" ry="40" opacity="0.6"/>
+    <!-- Mane -->
+    <path d="M60,60 Q80,40 100,60 Q120,40 140,60" stroke="url(#orangeGradient)" stroke-width="3" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- Team representation (abstract figures) -->
+  <g transform="translate(150, 350)" fill="#e0e0e0" opacity="0.6">
+    <!-- Person 1 -->
+    <circle cx="0" cy="0" r="15"/>
+    <rect x="-10" y="15" width="20" height="40" rx="5"/>
+    
+    <!-- Person 2 -->
+    <circle cx="60" cy="0" r="15"/>
+    <rect x="50" y="15" width="20" height="40" rx="5"/>
+    
+    <!-- Person 3 -->
+    <circle cx="120" cy="0" r="15"/>
+    <rect x="110" y="15" width="20" height="40" rx="5"/>
+    
+    <!-- Person 4 -->
+    <circle cx="180" cy="0" r="15"/>
+    <rect x="170" y="15" width="20" height="40" rx="5"/>
+  </g>
+  
+  <!-- ARASSAT text -->
+  <text x="400" y="450" text-anchor="middle" fill="url(#orangeGradient)" font-family="Arial, sans-serif" font-size="48" font-weight="bold">
+    ARASSAT
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="485" text-anchor="middle" fill="#b0b0b0" font-family="Arial, sans-serif" font-size="18">
+    Premium Equestrian Excellence
+  </text>
+  
+  <!-- Decorative border -->
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#FF6B35" stroke-width="2" opacity="0.3" rx="10"/>
+  
+  <!-- Corner accents -->
+  <circle cx="50" cy="50" r="5" fill="#FF6B35"/>
+  <circle cx="750" cy="50" r="5" fill="#FF6B35"/>
+  <circle cx="50" cy="550" r="5" fill="#FF6B35"/>
+  <circle cx="750" cy="550" r="5" fill="#FF6B35"/>
+</svg> 

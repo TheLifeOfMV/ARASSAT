@@ -12,7 +12,7 @@ const featuredProducts: Product[] = [
     name: 'Silla Chaparral Grabada',
     description: 'Silla artesanal con grabados únicos y diseño premium',
     price: 3150000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Montura',
     stock: 5,
     rating: 4.9,
@@ -22,14 +22,14 @@ const featuredProducts: Product[] = [
     slug: 'silla-chaparral-grabada',
     features: ['Cuero premium', 'Grabados artesanales', 'Comfort superior'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '2',
     name: 'Apero Grillo 3.0',
     description: 'Sistema de apero moderno con tecnología avanzada',
     price: 550000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Aperos',
     stock: 8,
     rating: 4.7,
@@ -39,14 +39,14 @@ const featuredProducts: Product[] = [
     slug: 'apero-grillo-3',
     features: ['Tecnología 3.0', 'Materiales resistentes', 'Fácil instalación'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '3',
     name: 'Apero Raucas',
     description: 'Apero tradicional con acabados modernos',
     price: 550000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Aperos',
     stock: 12,
     rating: 4.8,
@@ -56,14 +56,14 @@ const featuredProducts: Product[] = [
     slug: 'apero-raucas',
     features: ['Diseño tradicional', 'Calidad garantizada', 'Durabilidad extrema'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '4',
     name: 'Freno Vaquero Elite',
     description: 'Freno profesional para competencias de alto nivel',
     price: 850000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Frenos',
     stock: 6,
     rating: 4.6,
@@ -73,14 +73,14 @@ const featuredProducts: Product[] = [
     slug: 'freno-vaquero-elite',
     features: ['Acero inoxidable', 'Diseño ergonómico', 'Control preciso'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '5',
     name: 'Espuelas Artesanales',
     description: 'Espuelas hechas a mano con detalles únicos',
     price: 450000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Espuelas',
     stock: 10,
     rating: 4.8,
@@ -90,14 +90,14 @@ const featuredProducts: Product[] = [
     slug: 'espuelas-artesanales',
     features: ['Trabajo artesanal', 'Metales nobles', 'Diseño exclusivo'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '6',
     name: 'Cabezada Completa Premium',
     description: 'Sistema completo de cabezada con herrajes de lujo',
     price: 1200000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Cabezadas',
     stock: 4,
     rating: 4.9,
@@ -107,14 +107,14 @@ const featuredProducts: Product[] = [
     slug: 'cabezada-completa-premium',
     features: ['Cuero italiano', 'Herrajes dorados', 'Ajuste perfecto'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '7',
     name: 'Riendas Trenzadas Pro',
     description: 'Riendas profesionales trenzadas a mano',
     price: 320000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Riendas',
     stock: 15,
     rating: 4.7,
@@ -124,14 +124,14 @@ const featuredProducts: Product[] = [
     slug: 'riendas-trenzadas-pro',
     features: ['Trenzado manual', 'Cuero resistente', 'Grip superior'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   },
   {
     id: '8',
     name: 'Estribos Plateados Deluxe',
     description: 'Estribos de lujo con acabado plateado y diseño ergonómico',
     price: 680000.00,
-    imageUrl: '/api/placeholder/300/300',
+    imageUrl: '/images/product-placeholder.svg',
     category: 'Estribos',
     stock: 7,
     rating: 4.5,
@@ -141,7 +141,7 @@ const featuredProducts: Product[] = [
     slug: 'estribos-plateados-deluxe',
     features: ['Acabado plateado', 'Diseño ergonómico', 'Máxima seguridad'],
     variants: [],
-    images: ['/api/placeholder/300/300']
+    images: ['/images/product-placeholder.svg']
   }
 ];
 
